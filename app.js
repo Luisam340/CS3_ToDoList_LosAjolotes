@@ -16,10 +16,11 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 function addTask() {
-  let inputTask = document.getElementById("task-input").value;
+  let inputTask = document.getElementById("task-input");
   const emptyMessage = document.getElementById("empty-message");
-  if (inputTask.trim() !== "") {
-    listTasks.insertAdjacentHTML("beforeend", "<li>" + inputTask + "</li>");
+  if (inputTask.value.trim() !== "") {
+    listTasks.insertAdjacentHTML("beforeend", "<li>" + inputTask.value + "</li>");
+    inputTask.value = "";
     if (emptyMessage) {
       emptyMessage.remove();
     }
