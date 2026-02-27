@@ -21,7 +21,7 @@ function addTask() {
       "beforeend",
       "<li id='task-item-" +
         listCounter +
-        "' class='task-item list'>" +
+        "' class='task-item'>" +
         "<div class='mark'>" +
         "<span id='task-text-" +
         listCounter +
@@ -98,11 +98,29 @@ function editTask(id) {
   const taskItem = document.getElementById(id);
   const taskText = taskItem.querySelector(".task-text");
   const currentText = taskText.textContent;
-  const inputValue = prompt("Edit your task:", currentText);
   
-  if (inputValue !== null && inputValue.trim() !== "") {
-    taskText.textContent = inputValue.trim();
+  // create inline input element
+  const input = document.createElement("input");
+  input.type = "text";
+  input.value = currentText;
+  input.className = "edit-input";
+
+  taskText.replaceWith(input);
+  input.focus();
+
+  function finishEdit() {
+    if (input.value.trim() !== "") {
+      taskText.textContent = input.value.trim();
+    }
+    input.replaceWith(taskText);
   }
+
+  input.addEventListener("blur", finishEdit);
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      finishEdit();
+    }
+  });
 }
 
 function updateCounter() {

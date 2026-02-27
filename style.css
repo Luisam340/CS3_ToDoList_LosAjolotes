@@ -67,8 +67,15 @@ body {
 
 ul {
     list-style-type: none;
-    padding: 0%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
 
+#task-list, .task-count {
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 .button-container {
@@ -80,7 +87,7 @@ ul {
     margin-bottom: 1rem;
 }
 
-.list {
+.task-item {
     border-bottom: solid 1px var(--gris);
     width: 100%;
     margin: 0.5rem auto;
@@ -90,10 +97,16 @@ ul {
     justify-content: space-between;
 }
 
-.list, .task-count {
-    text-align: center;
-    margin-bottom: 1rem;
+/* Inline edit input style */
+.edit-input {
+    flex: 1;
+    max-width: 80%;
+    padding: 0.5rem 1rem;
+    border: solid 1px var(--gris);
+    border-radius: 4px;
+    font-family: var(--fuenteBody);
 }
+
 
 .delete-btn {
     display: flex;
