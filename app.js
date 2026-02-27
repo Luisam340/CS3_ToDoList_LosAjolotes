@@ -21,11 +21,23 @@ function addTask() {
       "beforeend",
       "<li id='task-item-" +
         listCounter +
-        "' class='task-item'>" +
-        inputTask.value +
-        " <button id='delete-task-btn-" +
+        "' class='task-item list'>" +
+        "<div class='mark'>" +
+        "<span id='task-text-" +
         listCounter +
-        "' class='delete-btn'>✕</button></li>",
+        "' class='task-text'>" +
+        inputTask.value +
+        "</span>" +
+        "<div style='display: flex; gap: 0.5rem;'>" +
+        "<button id='edit-task-btn-" +
+        listCounter +
+        "' class='edit-btn'>✎</button>" +
+        "<button id='delete-task-btn-" +
+        listCounter +
+        "' class='delete-btn'>✕</button>" +
+        "</div>" +
+        "</div>" +
+        "</li>",
     );
     inputTask.value = "";
     if (emptyMessage) {
@@ -48,15 +60,22 @@ function deleteTask(id) {
 }
 
 document.addEventListener("click", (event) => {
-  const button = event.target.closest(".delete-btn");
-  if (button) {
-    const taskList = button.closest(".task-item");
+  const deleteButton = event.target.closest(".delete-btn");
+  if (deleteButton) {
+    const taskList = deleteButton.closest(".task-item");
     deleteTask(taskList.id);
     return;
   }
-  const task = event.target.closest(".task-item");
-  if (task) {
-    markAsCompleted(task.id);
+  const editButton = event.target.closest(".edit-btn");
+  if (editButton) {
+    const taskList = editButton.closest(".task-item");
+    editTask(taskList.id);
+    return;
+  }
+  const taskText = event.target.closest(".task-text");
+  if (taskText) {
+    const taskList = taskText.closest(".task-item");
+    markAsCompleted(taskList.id);
     return;
   }
 });
@@ -73,6 +92,17 @@ function markAsCompleted(id) {
   }
 
   updateCounter();
+}
+
+function editTask(id) {
+  const taskItem = document.getElementById(id);
+  const taskText = taskItem.querySelector(".task-text");
+  const currentText = taskText.textContent;
+  const inputValue = prompt("Edit your task:", currentText);
+  
+  if (inputValue !== null && inputValue.trim() !== "") {
+    taskText.textContent = inputValue.trim();
+  }
 }
 
 function updateCounter() {

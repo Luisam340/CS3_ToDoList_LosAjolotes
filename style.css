@@ -7,27 +7,144 @@
     --gris: #B1B9CC;
     --negro: #000000;
     --blanco: #FFFFFF;
+    --rojo: #F54927;
 
 }
 
 html {
     box-sizing: border-box;
-    /*font-size: 62.5%; cada 1rem = 10px */
+    font-size: 62.5%; /*cada 1rem = 10px*/
 }
 
 *,*::before, *::after {
     box-sizing: inherit;
 }
 
-h1, h2, h3,h4 {
+h1, h2, h3, h4 {
+    font-family: var(--fuenteHeading);
+    line-height: 1.2;
 
 }
 
 body {
-    
+    font-family: var(--fuenteBody);
+    font-size: 1.6rem;
+    line-height: 2;
+    background-color: #466072;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .completed {
   text-decoration: line-through;
-  color: gray;
+  color: var(--gris);
+}
+
+.tittle {
+    margin: 2rem auto 2rem auto;
+    text-align: center;
+    width: 100%;
+    color: var(--negro);
+}
+
+.input-container {
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--blanco);
+    border: solid 1px var(--gris);
+    padding: 2rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0%;
+
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.list {
+    border-bottom: solid 1px var(--gris);
+    width: 100%;
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.list, .task-count {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.delete-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--rojo);
+    border: none;
+    color: var(--blanco);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+.edit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    border: none;
+    color: var(--blanco);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-right: 0.5rem;
+}
+
+.mark {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding: 1rem;
+    flex: 1;
+}
+
+.button-add {
+    font-family: var(--fuenteBody);
+    background-color: var(--primary-color);
+    border: none;
+    color: var(--blanco);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.text {
+    flex: 1;
+    max-width: 80%;
+    padding: 0.5rem 1rem;
+    border: solid 1px var(--gris);
+    border-radius: 4px;
+    font-family: var(--fuenteBody);
 }
