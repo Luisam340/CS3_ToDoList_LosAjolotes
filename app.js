@@ -27,7 +27,7 @@ function addTask() {
         inputTask.value +
         " <button id='delete-task-btn-" +
         listCounter +
-        "' class='delete-btn'>x</button></li>",
+        "' class='delete-btn'>✕</button></li>",
     );
     listCounter++;
     inputTask.value = "";
