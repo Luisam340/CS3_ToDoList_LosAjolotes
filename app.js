@@ -53,3 +53,20 @@ document.addEventListener("click", (event) => {
   const taskList = button.closest(".task-item");
   deleteTask(taskList.id);
 });
+
+function markAsCompleted(id) {
+  let taskItem = document.getElementById(id);
+  if (taskItem.style.textDecoration === "line-through") {
+    taskItem.style.textDecoration = "none";
+    taskItem.style.color = "black";
+  } else {
+    taskItem.style.textDecoration = "line-through";
+    taskItem.style.color = "gray";
+  }
+}
+document.addEventListener("click", (event) => {
+  const task = event.target.closest(".task-item");
+  if (!task) return;
+  console.log(task.id);
+  markAsCompleted(task.id);
+});

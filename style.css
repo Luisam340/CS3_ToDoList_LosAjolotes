@@ -12,7 +12,7 @@
 
 html {
     box-sizing: border-box;
-    font-size: 62.5%; /*cada 1rem = 10px */
+    /*font-size: 62.5%; cada 1rem = 10px */
 }
 
 *,*::before, *::after {
