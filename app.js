@@ -1,8 +1,8 @@
 const listTasks = document.getElementById("task-list");
 const taskButton = document.getElementById("add-task-btn");
-let deleteButton;
-
+ let taskCounter = document.getElementById("task-counter");
 let listCounter = 1;
+let listCompletedCounter = 0;
 function isListEmpty() {
   if (listTasks.childElementCount == 0) {
     listTasks.innerHTML = "<p id='empty-message'>No tasks yet</p>";
@@ -29,11 +29,13 @@ function addTask() {
         listCounter +
         "' class='delete-btn'>✕</button></li>",
     );
-    listCounter++;
     inputTask.value = "";
     if (emptyMessage) {
       emptyMessage.remove();
     }
+    updateCounter();
+    listCounter++;
+    
   }
 }
 
@@ -59,14 +61,24 @@ function markAsCompleted(id) {
   if (taskItem.style.textDecoration === "line-through") {
     taskItem.style.textDecoration = "none";
     taskItem.style.color = "black";
+    listCompletedCounter--;
+    updateCounter();
+    
   } else {
     taskItem.style.textDecoration = "line-through";
     taskItem.style.color = "gray";
+    listCompletedCounter++;
+    updateCounter();
   }
 }
 document.addEventListener("click", (event) => {
   const task = event.target.closest(".task-item");
   if (!task) return;
-  console.log(task.id);
   markAsCompleted(task.id);
 });
+
+function updateCounter() {
+  const total = listTasks.querySelectorAll(".task-item").length;
+
+  taskCounter.innerHTML = listCompletedCounter + " of " + total + " completed";
+}
