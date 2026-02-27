@@ -1,0 +1,28 @@
+:root {
+
+    --fuenteHeading: 'Roboto', sans-serif;
+    --fuenteBody: 'Capriola', sans-serif;
+
+    --primary-color: #279FF5;
+    --gris: #B1B9CC;
+    --negro: #000000;
+    --blanco: #FFFFFF;
+
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /*cada 1rem = 10px */
+}
+
+*,*::before, *::after {
+    box-sizing: inherit;
+}
+
+h1, h2, h3,h4 {
+
+}
+
+body {
+    
+}
