@@ -1,10 +1,40 @@
-# Construcción de software 3 (Diseño web)
-# To Do List
-# Los Ajolotes
+# CS3_ToDoList_LosAjolotes
 
-## Integrantes
-- Luisa Fernanda Mosquera Mosquera
-- Jhon Jander Correa Montoya
+**Nombre de la Materia:** Construcción de Software 3 (Diseño Web)  
+**Nombre del Proyecto:** To-Do List  
+**Equipo:** Los Ajolotes  
 
-### Descripción del proyecto
-Este proyecto consiste en el desarrollo de una aplicación de lista de tareas (to-do list) orientada a la organización personal. El programa permite a los usuarios registrar actividades pendientes y marcar el estado de cada tarea. Su diseño busca ser intuitivo. El objetivo principal es mejorar la productividad y facilitar la planificación, brindando una herramienta práctica para gestionar compromisos y proyectos de manera eficiente.
+**Integrantes:**
+* Luisa Fernanda Mosquera Mosquera  
+* Jhon Jander Correa Montoya  
+
+---
+
+## Descripción
+
+Este proyecto implementa una aplicación web de lista de tareas (To-Do List) desarrollada con HTML, CSS y JavaScript puro.
+
+La aplicación permite:
+
+- Agregar tareas desde un campo de texto.
+- Eliminar tareas individuales.
+- Marcar y desmarcar tareas como completadas.
+- Visualizar un contador dinámico de tareas completadas sobre el total.
+- Mostrar un mensaje cuando la lista está vacía.
+
+El objetivo es aplicar conceptos de manipulación del DOM, manejo de eventos y estilos dinámicos sin el uso de frameworks externos.
+
+---
+
+## Requerimientos
+
+- Navegador web moderno (Google Chrome, Microsoft Edge, Firefox, etc.).
+- No requiere instalación de dependencias externas.
+
+---
+
+## Instrucciones de ejecución
+
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/Luisam340/CS3_ToDoList_LosAjolotes.git
